@@ -21,15 +21,28 @@ app.use(express.static(path.join(__dirname, "public")))
 
 
 
+
 app.get("/", (req, res) => {
-
-
     res.render("index")
-
 })
 
 app.get("/about", (req, res) => {
     res.render("about")
+})
+app.get("/faq", (req, res) => {
+    res.render("faq")
+})
+app.get("/contact", (req, res) => {
+    res.render("contact")
+})
+app.get("/control", (req, res) => {
+    res.render("admin")
+})
+
+// add it on the end only *
+
+app.get("*",(req,res)=>{
+    res.render("notfound")
 })
 
 

@@ -1,3 +1,14 @@
 * {
-    background-color: greenyellow;
+    background-color: rgb(255, 250, 153);
+    font-family: "Poppins", sans-serif;
+
+}
+
+li{
+    margin: .5rem .7rem;
+}
+
+ol{
+    list-style-type: none;
+    display: flex;
 }
