@@ -3,15 +3,26 @@
 
 <head>
     <%- include('./partials/_head') %>
-    <title>Document</title>
+        <title>Document</title>
 </head>
 
 <body>
     <%- include('./partials/_navbar.ejs') %>
 
-    <h1>this is contact page</h1>
+        <h1>this is contact page</h1>
 
-    <img src="/imgs/test.jpg" alt="">
+        <img src="/imgs/test.jpg" alt="">
+
+        <form action="/postroute"   method="post">
+
+            <label for="name">enter name</label>
+            <input type="text" name="username" id="name">
+
+            <label for="pass">enter password</label>
+            <input type="text" name="userpass" id="pass">
+
+            <input type="submit">
+        </form>
 
 
 </body>

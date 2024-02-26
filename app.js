@@ -1,6 +1,7 @@
 import express from "express"
-
 import path from "path"
+
+import bodyparser from 'body-parser';
 
 
 const __dirname = path.resolve()
@@ -19,6 +20,10 @@ app.disable('view cache');
 
 app.use(express.static(path.join(__dirname, "public")))
 
+
+// node presets
+app.use(bodyparser.urlencoded({ extended: false }));
+app.use(express.json());
 
 
 
@@ -39,9 +44,22 @@ app.get("/control", (req, res) => {
     res.render("admin")
 })
 
+
+// post request
+
+// app.get("/postroute")
+
+app.post("/postroute", (req, res) => {
+
+    const { username, userpass } = req.body
+
+    console.log(username, userpass)
+    res.redirect('/');
+})
+
 // add it on the end only *
 
-app.get("*",(req,res)=>{
+app.get("*", (req, res) => {
     res.render("notfound")
 })
 
